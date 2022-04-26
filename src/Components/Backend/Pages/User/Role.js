@@ -87,17 +87,17 @@ export default class Role extends Component{
         const perData = this.state.permission;
         const showPer = perData.map((perData,idx)=>{
             return[
-                <tr>
-                    <td>
+                <ul>
+                    <li>
                         <input
                             name="perName[]"
-                            onChange={(event)=>{this.setState({perName :event.target.value})}}
+                            onClick={(event)=>{this.setState({perName : event.target.value})}}
                             id={perData.id}
                             type="checkbox"
-                            value={perData.name}/>
-                        <label htmlFor={perData.id}>{perData.name}</label>
-                    </td>
-                </tr>
+                            value={perData.name} />
+                        <label htmlFor={perData.name}>{perData.name}</label>
+                    </li>
+                </ul>
             ]
         });
         /*Show permission in form*/

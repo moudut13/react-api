@@ -31,6 +31,34 @@ export default class Sidebar extends Component{
                         <a href="javascript:;" className="has-arrow">
                             <div className="parent-icon"><i className='bx bx-home'></i>
                             </div>
+                            <div className="menu-title">Product</div>
+                        </a>
+                        <ul>
+                            <li>
+                                <Link to="/products">
+                                    <i className="bx bx-right-arrow-alt"></i>
+                                    <div className="menu-title">Products</div>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/categories">
+                                    <i className="bx bx-right-arrow-alt"></i>
+                                    <div className="menu-title">Category</div>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/tags">
+                                    <i className="bx bx-right-arrow-alt"></i>
+                                    <div className="menu-title">Tags</div>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;" className="has-arrow">
+                            <div className="parent-icon"><i className='bx bx-home'></i>
+                            </div>
                             <div className="menu-title">User</div>
                         </a>
                         <ul>

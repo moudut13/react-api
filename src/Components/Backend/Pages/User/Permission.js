@@ -111,7 +111,8 @@ export default class Permission extends Component{
                                         <div className="modal-body">
                                             <div>
                                                 <label className="form-label">Permission Name</label>
-                                                <input name="name" onChange={(event)=>{this.setState({name:event.target.value})}} className="form-control" type="text" placeholder="Permission" />
+                                                <input name="name"
+                                                       onChange={(event)=>{this.setState({name:event.target.value})}} className="form-control" type="text" placeholder="Permission" />
                                             </div>
                                             <strong>{this.state.nameError}</strong>
                                         </div>
