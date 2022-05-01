@@ -2,12 +2,15 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import CategoryFirst from "./CategoryFirst";
+import CategorySecond from "./CategorySecond";
+import CategoryThird from "./CategoryThird";
 export default class Categories extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
             categoryFirst : [],
+            categorySecond : [],
         }
     }
 
@@ -15,11 +18,18 @@ export default class Categories extends Component{
         axios.get('http://127.0.0.1:8000/api/category')
             .then((response) => {
                 this.setState({categoryFirst:response.data})
-            })
+            });
+        axios.get('http://127.0.0.1:8000/api/category-second')
+            .then((response) => {
+                this.setState({categorySecond:response.data})
+            });
     }
+
+
 
     render() {
         const data = this.state.categoryFirst;
+        const Second = this.state.categorySecond;
 
 
         return(
@@ -38,17 +48,13 @@ export default class Categories extends Component{
                                 </ol>
                             </nav>
                         </div>
-                        <div className="ms-auto">
-                            <div className="btn-group">
-                                <button type="button" className="btn btn-primary text-uppercase" data-bs-toggle="modal"
-                                        data-bs-target="#categoryFormShowModal">Add Category</button>
-                            </div>
-                        </div>
                     </div>
 
                     <h5 className="mb-0 text-uppercase">Category List</h5>
                     <br/>
                     <CategoryFirst data={data}/>
+                    <CategorySecond data={data} second={Second}/>
+                    <CategoryThird data={data} />
 
                     <div className="modal fade" id="categoryFormShowModal" tabIndex="-1"
                          style={{display: 'none'}} aria-hidden="true">
@@ -85,3 +91,4 @@ export default class Categories extends Component{
         );
     }
 }
+
